@@ -40,29 +40,47 @@ import io.opencensus.contrib.http.jetty.client.OcJettyHttpClient;
 #### Dependency management
 Please add these lines to a pom.xml file in your current working directory.
 
-{{<tabs Pom>}}
+{{<tabs Pom Gradle Ivy Buildr>}}
 {{<highlight xml>}}
-    <dependencies>
-        <dependency>
-            <groupId>io.opencensus</groupId>
-            <artifactId>opencensus-contrib-http-jetty-client</artifactId>
-            <version>${opencensus.version}</version>
-        </dependency>
+<!-- https://mvnrepository.com/artifact/io.opencensus/opencensus-contrib-http-jetty-client -->
+<dependency>
+    <groupId>io.opencensus</groupId>
+    <artifactId>opencensus-contrib-http-jetty-client</artifactId>
+    <version>0.19.1</version>
+</dependency>
 
-        <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-client</artifactId>
-            <version>${jetty.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-tcnative-boringssl-static</artifactId>
-            <version>2.0.8.Final</version>
-            <scope>runtime</scope>
-        </dependency>
-    </dependencies>
+<!-- https://mvnrepository.com/artifact/io.opencensus/opencensus-contrib-http-util -->
+<dependency>
+    <groupId>io.opencensus</groupId>
+    <artifactId>opencensus-contrib-http-util</artifactId>
+    <version>0.19.1</version>
+</dependency>
 {{</highlight>}}
+
+{{<highlight gradle>}}
+// https://mvnrepository.com/artifact/io.opencensus/opencensus-contrib-http-jetty-client
+compile group: 'io.opencensus', name: 'opencensus-contrib-http-jetty-client', version: '0.19.1'
+
+// https://mvnrepository.com/artifact/io.opencensus/opencensus-contrib-http-util
+compile group: 'io.opencensus', name: 'opencensus-contrib-http-util', version: '0.19.1'
+{{</highlight>}}
+
+{{<highlight xml>}}
+<!-- https://mvnrepository.com/artifact/io.opencensus/opencensus-contrib-http-jetty-client -->
+<dependency org="io.opencensus" name="opencensus-contrib-http-jetty-client" rev="0.19.1"/>
+
+<!-- https://mvnrepository.com/artifact/io.opencensus/opencensus-contrib-http-util -->
+<dependency org="io.opencensus" name="opencensus-contrib-http-util" rev="0.19.1"/>
+{{</highlight>}}
+
+{{<highlight python>}}
+# https://mvnrepository.com/artifact/io.opencensus/opencensus-contrib-http-jetty-client
+'io.opencensus:opencensus-contrib-http-jetty-client:jar:0.19.1'
+
+# https://mvnrepository.com/artifact/io.opencensus/opencensus-contrib-http-util
+'io.opencensus:opencensus-contrib-http-util:jar:0.19.1'
+{{</highlight>}}
+
 {{</tabs>}}
 
 ### Initializing the client
@@ -404,4 +422,7 @@ rate(opencensus_io_http_client_sent_bytes_bucket[5m])
 Resource|URL
 ---|---
 Jetty client JavaDoc|[org.eclipse.jetty.client](https://www.eclipse.org/jetty/javadoc/current/org/eclipse/jetty/client/package-summary.html)
-OcJettyClient, the Jetty OpenCensus client integration|[io.opencensus.contrib.http.jetty.client.OcJettyHttpClient](https://www.javadoc.io/doc/io.opencensus/opencensus-contrib-http-jetty-client/)
+OcJettyClient JavaDoc|[io.opencensus.contrib.http.jetty.client.OcJettyHttpClient](https://www.javadoc.io/doc/io.opencensus/opencensus-contrib-http-jetty-client/)
+OcJetty on Maven Central|https://mvnrepository.com/artifact/io.opencensus/opencensus-contrib-http-jetty-client
+HTTP util on Maven Central|https://mvnrepository.com/artifact/io.opencensus/opencensus-contrib-http-util
+
